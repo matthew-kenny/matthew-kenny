@@ -1,6 +1,3 @@
-# Public Repo
-List of my automation stuff scipts (kuberneties, powershell, bash and cloud-init)
-
 # Windows Client Software Install 
 Install Windows 10 then install chocolatey using the following in powershell:
 
