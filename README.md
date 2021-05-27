@@ -1,15 +1,15 @@
-# Windows Client Software Install 
-Install Windows 10 then install chocolatey using the following in powershell:
+# Matthew Kenny
 
-Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+Heres is my quick scripts to enable server or client installations quicker with some automation. 😁
 
-[Chocolatey Programs to Install VS 2019 and VS Code](https://raw.githubusercontent.com/matthew-kenny/public/main/chocoprograms.ps1)
+## Microk8s
+Installation of Microk8s based kubernetes within Ubuntu/Debian - [microk8s.sh](https://github.com/matthew-kenny/matthew-kenny/blob/main/microk8s.sh)
 
-# Linux Standalone Server Software Install 
-[Deb based (Ubuntu, Raspberry PI, Debian) Server Shell script to install Neofetch, DoH DNS Server and Minecraft Server](https://raw.githubusercontent.com/matthew-kenny/public/main/linuxserverinstall.sh)
+## Rancher
+Installation of Rancher based kubernetes within Ubuntu/Debian - [rancher.sh](https://github.com/matthew-kenny/matthew-kenny/blob/main/rancher.sh)
 
-# Linux Kuberneties Server Install
-[Deb based (Ubuntu) Server Shell script to install Microk8s in High Availablity](https://raw.githubusercontent.com/matthew-kenny/public/main/Kubernetes.sh)
+## Ubuntu Core
+Installation Minecraft server and DoH DNS server within Ubuntu Core/Raspberry Pi OS - [ubuntucore.sh](https://github.com/matthew-kenny/matthew-kenny/blob/main/ubuntucore.sh)
 
-# Linux Cloud JSON Cloud-Init Install
-[Azure Ubuntu based VM JSON Install script Shell script to install Neofetch, DoH DNS Server and Minecraft Server](https://raw.githubusercontent.com/matthew-kenny/public/main/linuxcloud-init.json)
+## Windows 10
+Installs and updates recommended applications in powershell within Windows 10 - [windows10.ps1](https://github.com/matthew-kenny/matthew-kenny/blob/main/windows10.ps1)
