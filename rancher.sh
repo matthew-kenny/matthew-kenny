@@ -1,5 +1,5 @@
 #!/bin/bash
-## Standalone Installation of Ubuntu and Rancher based kubernetes ##
+## Installation of Ubuntu and Rancher based kubernetes ##
 
 $USER=USERNAME
 $IPADDRESS=0.0.0.0
