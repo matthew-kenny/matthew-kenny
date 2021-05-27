@@ -7,7 +7,7 @@ $IPADDRESS=0.0.0.0
 #Update and upgrade the OS by running 
 sudo apt update | sudo apt upgrade -y 
 sudo tmedatectl set-local-rtc 1 --adjust-system-clock
-sudo apt install neofetch
+sudo apt install neofetch snapd
 
 #Generate SSH keys though windows 10 in powershell 
 #ssh-keygen -b 4096
