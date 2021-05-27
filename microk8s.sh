@@ -1,5 +1,5 @@
 #!/bin/bash
-## Standalone Installation of Ubuntu and Microk8s based kubernetes ##
+## Installation of Ubuntu and Microk8s based kubernetes ##
 
 ##Variables##
 $MACHINENAME1 = server1
