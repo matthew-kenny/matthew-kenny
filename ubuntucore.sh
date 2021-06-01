@@ -38,11 +38,14 @@ sudo ln -sf /run/systemd/resolve/resolv.conf /etc/resolv.conf
 #Download and Install local DNS Server 
 mkdir $HOME/cloudflared
 cd $HOME/cloudflared
+#Pick your arch
 wget https://bin.equinox.io/c/VdrWdbjqyF/cloudflared-stable-linux-arm.deb
-sudo dpkg -i cloudflared-stable-linux-arm.debh
+wget https://bin.equinox.io/c/VdrWdbjqyF/cloudflared-stable-linux-amd64.deb
+sudo dpkg -i cloudflared-stable-linux-arm.deb
+sudo dpkg -i cloudflared-stable-linux-arm64.deb
 
 #Add the config run DNS Server
-sudo echo 'CLOUDFLARED_OPTS=--port 5053 --upstream https://1.1.1.3/dns-query --upstream https://dns-family.adguard.com/dns-query --upstream https://doh.familyshield.opendns.com/dns-query --upstream https://dns.quad9.net/dns-query' >> /etc/default/cloudflared 
+sudo echo 'CLOUDFLARED_OPTS=--port 5053 --upstream https://1.1.1.3/dns-query --upstream https://dns-family.adguard.com/dns-query --upstream https://doh.familyshield.opendns.com/dns-query --upstream https://dns.quad9.net/dns-query' >> sudo /etc/default/cloudflared 
 
 #Run cloudflared installer
 sudo cloudflared
