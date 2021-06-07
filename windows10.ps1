@@ -17,7 +17,7 @@ microsoft-teams.install /
 termius /
 
 ## Installs Programming Tools ##
-choco install wget
+wget /
 dotnetcore-sdk /
 visualstudio2019community /
 visualstudio2019-workload-netcoretools /
@@ -36,6 +36,7 @@ microsoftazurestorageexplorer /
 az.powershell /
 awstools.powershell /
 vmware-powercli-psmodule /
+vmrc /
 git.install /
 git-cola  /
 
