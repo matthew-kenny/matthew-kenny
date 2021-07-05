@@ -14,6 +14,7 @@ sudo echo '$MACHINENAME1 $IPADDRESS1' >> /etc/hosts
 sudo echo '$MACHINENAME2 $IPADDRESS2' >> /etc/hosts
 sudo echo '$MACHINENAME3 $IPADDRESS3' >> /etc/hosts
 sudo apt update | sudo apt upgrade –y 
+sudo touch $HOME/.hushlogin
 sudo apt install neofetch snapd
 sudo echo 'neofetch' >> .bashrc
 sudo snap install microk8s --classic --channel=latest/edge/ha-preview 
