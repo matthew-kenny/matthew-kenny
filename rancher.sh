@@ -20,6 +20,7 @@ sudo apt install neofetch
 #ssh-keygen -b 4096
 #ssh-copy-id $USER@$IPADDRESS
 
+sudo touch $HOME/.hushlogin
 sudo nano /etc/hostname
 sudo nano /etc/hosts
 
