@@ -8,7 +8,7 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 choco install microsoft-edge /
 7zip.install /
 powershell-core /
-teamviewer /
+anydesk.install /
 dotnetfx /
 adobereader /
 notepadplusplus.install /
