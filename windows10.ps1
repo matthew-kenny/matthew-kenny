@@ -36,6 +36,7 @@ microsoftazurestorageexplorer /
 az.powershell /
 awstools.powershell /
 vmware-powercli-psmodule /
+vmware-workloadmanagement /
 vmrc /
 git.install /
 git-cola  /
