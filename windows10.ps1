@@ -4,6 +4,8 @@
 ## Installs Chocolatey ##
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 
+## Disable confimation for installing apps ##
+choco feature enable -n allowGlobalConfirmation
 ## Installs Base Programs ##
 choco install microsoft-edge /
 7zip.install /
@@ -46,8 +48,5 @@ kubernetes-cli /
 docker-desktop /
 lens /
 
-## Parameters ##
--y
-
 ## Upgrade Software ##
-choco upgrade all -y
+choco upgrade all
