@@ -32,6 +32,7 @@ vscode-powershell /
 vscode-pull-request-github /
 vscode-azure-deploy /
 vscode-kubernetes-tools /
+kubernetes-kompose /
 awscli /
 azure-cli /
 microsoftazurestorageexplorer /
