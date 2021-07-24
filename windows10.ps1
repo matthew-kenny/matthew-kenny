@@ -41,6 +41,7 @@ awstools.powershell /
 vmware-powercli-psmodule /
 vmware-workloadmanagement /
 vmrc /
+octant /
 git.install /
 git-cola  /
 
