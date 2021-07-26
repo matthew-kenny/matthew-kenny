@@ -35,6 +35,7 @@ vscode-kubernetes-tools /
 kubernetes-kompose /
 awscli /
 azure-cli /
+terraform /
 microsoftazurestorageexplorer /
 az.powershell /
 awstools.powershell /
