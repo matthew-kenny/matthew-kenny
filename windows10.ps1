@@ -17,9 +17,12 @@ notepadplusplus.install /
 office365business /
 microsoft-teams.install /
 termius /
+nano /
+wget /
 
 ## Installs Programming Tools ##
-wget /
+openssl.light /
+azure-pipelines-agent /
 dotnetcore-sdk /
 visualstudio2019community /
 visualstudio2019-workload-netcoretools /
