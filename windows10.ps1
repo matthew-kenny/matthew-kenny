@@ -19,6 +19,7 @@ microsoft-teams.install /
 termius /
 nano /
 wget /
+winfetch --pre --version 2.2.0
 
 ## Installs Programming Tools ##
 openssl.light /
