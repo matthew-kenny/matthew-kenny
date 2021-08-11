@@ -6,8 +6,11 @@ $IPADDRESS=0.0.0.0
 
 #Update and upgrade the OS by running 
 sudo apt update | sudo apt upgrade -y 
-sudo tmedatectl set-local-rtc 1 --adjust-system-clock
+sudo timedatectl set-local-rtc 1 --adjust-system-clock
 sudo apt install neofetch snapd
+'ntp: time.cloudflare.com' >> /etc/systemd/timesyncd.conf
+sudo timedatectl set-ntp true
+sudo timedatectl set-timezone "Europe/London"
 
 #Generate SSH keys though windows 10 in powershell 
 #ssh-keygen -b 4096
