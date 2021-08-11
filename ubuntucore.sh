@@ -27,7 +27,7 @@ sudo nano /etc/hosts
 neofetch >> .bashrc 
 
 #DDNS Client
-sudo snap install ddclient-snap
+git clone https://github.com/K0p1-Git/cloudflare-ddns-updater
 
 #If Ubuntu Change SystemD Resolved DNS port
 sudo systemctl stop systemd-resolved
