@@ -32,18 +32,11 @@ sonarscanner-msbuild-netcoreapp30 /
 visualstudio2019-workload-azurebuildtools /
 visualstudio2019-workload-node /
 vscode.install /
-vscode-powershell /
-vscode-pull-request-github /
-vscode-azure-deploy /
-vscode-kubernetes-tools /
 kubernetes-kompose /
 awscli /
 azure-cli /
 terraform /
 microsoftazurestorageexplorer /
-az.powershell /
-awstools.powershell /
-vmware-powercli-psmodule /
 vmware-workloadmanagement /
 vmrc /
 octant /
@@ -57,3 +50,9 @@ lens /
 
 ## Upgrade Software ##
 choco upgrade all
+
+## Powershell modules ##
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+Install-Module -Name Az  -Repository PSGallery -Force
+Install-Module -Name AWSPowerShell.NetCore -Repository PSGallery -Force
+Install-Module -Name VMware.PowerCLI -Repository PSGallery -Force
