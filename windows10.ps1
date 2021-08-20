@@ -19,7 +19,7 @@ microsoft-teams.install /
 termius /
 nano /
 wget /
-winfetch --pre --version 2.2.0
+winfetch --pre --version 2.2.0 /
 
 ## Installs Programming Tools ##
 openssl.light /
@@ -42,6 +42,7 @@ vmrc /
 octant /
 git.install /
 git-cola  /
+docker-cli /
 
 ## Installs Kubernetes Tools ##
 kubernetes-cli /
