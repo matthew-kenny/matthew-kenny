@@ -11,5 +11,8 @@ Installation of Rancher based kubernetes within Ubuntu/Debian - [rancher.sh](htt
 ## Ubuntu Core
 Installation Minecraft server and DoH DNS server within Ubuntu Core/Raspberry Pi OS - [ubuntucore.sh](https://github.com/matthew-kenny/matthew-kenny/blob/main/ubuntucore.sh)
 
+## Photon OS/Amazon Linux 2 OS/Red Hat
+Installation of red hat based distro tools and docker - [photonos.sh](https://github.com/matthew-kenny/matthew-kenny/blob/main/photonos.sh)
+
 ## Windows 10
 Installs and updates recommended applications in powershell within Windows 10 - [windows10.ps1](https://github.com/matthew-kenny/matthew-kenny/blob/main/windows10.ps1)
