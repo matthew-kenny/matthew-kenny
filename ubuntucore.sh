@@ -7,7 +7,7 @@ $IPADDRESS=0.0.0.0
 #Update and upgrade the OS by running 
 sudo apt update | sudo apt upgrade -y 
 sudo timedatectl set-local-rtc 1 --adjust-system-clock
-sudo apt install neofetch snapd
+sudo apt install neofetch snapd unzip
 'ntp: time.cloudflare.com' >> /etc/systemd/timesyncd.conf
 sudo timedatectl set-ntp true
 sudo timedatectl set-timezone "Europe/London"
@@ -22,6 +22,7 @@ sudo timedatectl set-timezone "Europe/London"
 #chmod 0700 $HOME/.ssh
 #ssh-keygen -b 4096
 #ssh-copy-id $USER@$IPADDRESS
+sudo nano /etc/ssh/sshd_config
 sudo touch $HOME/.hushlogin
 sudo nano /etc/hostname
 sudo nano /etc/hosts
