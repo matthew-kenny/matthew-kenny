@@ -1,0 +1,30 @@
+# apple
+apple.com
+icloud.com
+apple-dns.com
+*.apple.com
+*.icloud.com
+*.apple-dns.com
+*.fe.apple-dns.com
+
+# anydesk
+anydesk.com
+anydesk.de
+
+# google maps
+mobilemaps.googleapis.com
+
+# bbc
+emp.bbci.co.uk
+
+# Uber
+cn-geo1.uber.com
+
+# Podcasts
+pdst.fm
+
+# New Relic
+newrelic.com
+*.newrelic.com
+nr-data.net
+*.nr-data.net
