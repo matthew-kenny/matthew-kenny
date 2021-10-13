@@ -56,4 +56,4 @@ Install-Package -Name docker -ProviderName DockerMsftProvider
 Update-Module
 Install-Package -Name Docker -ProviderName DockerMsftProvider -Update -Force
 Start-Service Docker
-New-ItemProperty -Path "HKLM:\SOFTWARE\OpenSSH" -Name DefaultShell -Value "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe" -PropertyType String -Force
+New-ItemProperty -Path "HKLM:\SOFTWARE\OpenSSH" -Name DefaultShell -Value "C:\Program Files\PowerShell\7\pwsh.exe" -PropertyType String -Force
