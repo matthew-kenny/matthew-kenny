@@ -34,13 +34,6 @@ git.install /
 docker-cli /
 smimesign /
 
-## Kubernetes Tools ##
-kubernetes-cli /
-docker-desktop /
-lens /
-octant /
-kubernetes-kompose /
-
 ## VS Full Client ##
 azure-pipelines-agent /
 dotnetcore-sdk /
@@ -51,11 +44,6 @@ sonarscanner-msbuild-netcoreapp30 /
 visualstudio2019-workload-azurebuildtools /
 visualstudio2019-workload-node /
 
-## VMware Tools ##
-vmware-tools /
-vmware-workloadmanagement /
-vmrc /
-
 ## Upgrade Software ##
 choco upgrade all
 
@@ -63,5 +51,9 @@ choco upgrade all
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 Install-Module -Name Az  -Repository PSGallery -Force
 Install-Module -Name AWSPowerShell.NetCore -Repository PSGallery -Force
-Install-Module -Name VMware.PowerCLI -Repository PSGallery -Force
+Install-Module -Name DockerMsftProvider -Repository PSGallery -Force
+Install-Package -Name docker -ProviderName DockerMsftProvider
 Update-Module
+Install-Package -Name Docker -ProviderName DockerMsftProvider -Update -Force
+Start-Service Docker
+New-ItemProperty -Path "HKLM:\SOFTWARE\OpenSSH" -Name DefaultShell -Value "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe" -PropertyType String -Force
