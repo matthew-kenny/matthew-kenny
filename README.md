@@ -20,3 +20,6 @@ Installation Minecraft server and DoH DNS server within Ubuntu Core/Raspberry Pi
 
 ## Windows 10
 Installs and updates recommended applications in powershell within Windows 10 - [windows10.ps1](https://github.com/matthew-kenny/matthew-kenny/blob/main/windows10.ps1)
+
+## Windows Server
+Installation Minecraft server and DoH DNS server within Server Core [WindowsServer.ps1](https://github.com/matthew-kenny/matthew-kenny/blob/main/WindowsServer.ps1)
