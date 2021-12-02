@@ -18,8 +18,8 @@ Installation of Rancher based kubernetes within Ubuntu/Debian - [rancher.sh](htt
 ## Ubuntu Core
 Installation Minecraft server and DoH DNS server within Ubuntu Core/Raspberry Pi OS - [ubuntucore.sh](https://github.com/matthew-kenny/matthew-kenny/blob/main/ubuntucore.sh)
 
-## Windows 10
-Installs and updates recommended applications in powershell within Windows 10 - [windows10.ps1](https://github.com/matthew-kenny/matthew-kenny/blob/main/windows10.ps1)
+## Windows 10 and 11
+Installs and updates recommended applications in powershell within Windows 10 and 11 - [windows10.ps1](https://github.com/matthew-kenny/matthew-kenny/blob/main/windows10.ps1)
 
 ## Windows Server
 Installation Minecraft server and DoH DNS server within Server Core [WindowsServer.ps1](https://github.com/matthew-kenny/matthew-kenny/blob/main/WindowsServer.ps1)
