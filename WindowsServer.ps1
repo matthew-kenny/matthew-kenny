@@ -6,6 +6,7 @@ Install-Module -Name DockerMsftProvider -Repository PSGallery -Force
 Install-Package -Name docker -ProviderName DockerMsftProvider
 Restart-Computer -Force
 docker version
+Add-WindowsCapability -Online -Name OpenSSH.Server~~~~0.0.1.0
 New-ItemProperty -Path "HKLM:\SOFTWARE\OpenSSH" -Name DefaultShell -Value "C:\Program Files\PowerShell\7\pwsh.exe" -PropertyType String -Force
 mkdir %username%\Documents\PowerShell
 nano %username%\Documents\PowerShell\Microsoft.PowerShell_profile.ps1
