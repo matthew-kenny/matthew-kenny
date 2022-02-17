@@ -6,6 +6,7 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 
 ## Disable confimation for installing apps ##
 choco feature enable -n allowGlobalConfirmation
+choco install Containers Microsoft-Hyper-V --source windowsfeatures
 
 ## Installs Base Programs ##
 choco install microsoft-edge /
@@ -30,17 +31,8 @@ terraform /
 microsoftazurestorageexplorer /
 git.install /
 docker-cli /
-smimesign /
-
-## VS Full Client ##
-azure-pipelines-agent /
-dotnetcore-sdk /
-visualstudio2019community /
-visualstudio2019-workload-netcoretools /
-visualstudio2019testagent /
-sonarscanner-msbuild-netcoreapp30 /
-visualstudio2019-workload-azurebuildtools /
-visualstudio2019-workload-node /
+docker-engine /
+visualstudio2022enterprise /
 
 ## Upgrade Software ##
 choco upgrade all
@@ -48,10 +40,5 @@ choco upgrade all
 ## Powershell modules ##
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 Install-Module -Name Az  -Repository PSGallery -Force
-Install-Module -Name AWSPowerShell.NetCore -Repository PSGallery -Force
-Install-Module -Name DockerMsftProvider -Repository PSGallery -Force
-Install-Package -Name docker -ProviderName DockerMsftProvider
 Update-Module
-Install-Package -Name Docker -ProviderName DockerMsftProvider -Update -Force
-Start-Service Docker
 New-ItemProperty -Path "HKLM:\SOFTWARE\OpenSSH" -Name DefaultShell -Value "C:\Program Files\PowerShell\7\pwsh.exe" -PropertyType String -Force
