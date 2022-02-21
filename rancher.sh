@@ -1,8 +1,8 @@
 #!/bin/bash
 ## Installation of Ubuntu and Rancher based kubernetes ##
 
-$USER=USERNAME
-$IPADDRESS=0.0.0.0
+USER=USERNAME
+IPADDRESS=1.2.3.4
 
 #Update and upgrade the OS by running 
 sudo apt update | sudo apt upgrade -y 
@@ -12,15 +12,15 @@ sudo apt install neofetch
 #Generate SSH keys though windows 10 in powershell 
 #ssh-keygen -b 4096
 #then run 
-#cat ~/.ssh/id_rsa.pub | ssh $USER@$IPADDRESS` "mkdir -p ~/.ssh && touch ~/.ssh/authorized_keys && chmod -R go= ~/.ssh && cat >> ~/.ssh/authorized_keys" 
+#cat ~/.ssh/id_rsa.pub | ssh USER@IPADDRESS` "mkdir -p ~/.ssh && touch ~/.ssh/authorized_keys && chmod -R go= ~/.ssh && cat >> ~/.ssh/authorized_keys"
 
 #Generate SSH keys through Linux
-#mkdir –p $HOME/.ssh
-#chmod 0700 $HOME/.ssh
+#mkdir –p "$HOME"/.ssh
+#chmod 0700 "$HOME"/.ssh
 #ssh-keygen -b 4096
-#ssh-copy-id $USER@$IPADDRESS
+#ssh-copy-id USER@IPADDRESS
 
-sudo touch $HOME/.hushlogin
+sudo touch "$HOME"/.hushlogin
 sudo nano /etc/hostname
 sudo nano /etc/hosts
 

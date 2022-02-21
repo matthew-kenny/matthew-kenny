@@ -1,5 +1,8 @@
 # Photon Conf
 
+USER=USERNAME
+IPADDRESS=1.2.3.4
+
 ## Console
 
 tdnf install unzip wget nano openjre8
@@ -12,7 +15,7 @@ reboot
 
 ## From laptop
 
-cat ~/.ssh/docker1_id_rsa.pub | ssh root@192.168.30.14 "mkdir -p ~/.ssh && touch ~/.ssh/authorized_keys && chmod -R go= ~/.ssh && cat >> ~/.ssh/authorized_keys"
+cat ~/.ssh/docker1_id_rsa.pub | ssh USER@IPADDRESS "mkdir -p ~/.ssh && touch ~/.ssh/authorized_keys && chmod -R go= ~/.ssh && cat >> ~/.ssh/authorized_keys"
 
 ## SSH
 

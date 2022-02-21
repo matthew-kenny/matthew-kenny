@@ -2,19 +2,19 @@
 ## Installation of Ubuntu and Microk8s based kubernetes ##
 
 ##Variables##
-$MACHINENAME1 = server1
-$IPADDRESS1 = x.x.x.x
-$MACHINENAME2 = server2
-$IPADDRESS2 = x.x.x.x
-$MACHINENAME3 = server3
-$IPADDRESS3 = x.x.x.x
-
-## Setup ## 
+MACHINENAME1=server1
+IPADDRESS1=1.2.3.4
+MACHINENAME2=server2
+IPADDRESS2=1.2.3.5
+MACHINENAME3=server3
+IPADDRESS3=1.2.3.6
+## Setup ##
+# shellcheck disable=SC2129
 sudo echo '$MACHINENAME1 $IPADDRESS1' >> /etc/hosts
 sudo echo '$MACHINENAME2 $IPADDRESS2' >> /etc/hosts
 sudo echo '$MACHINENAME3 $IPADDRESS3' >> /etc/hosts
 sudo apt update | sudo apt upgrade –y 
-sudo touch $HOME/.hushlogin
+sudo touch "$HOME"/.hushlogin
 sudo apt install neofetch snapd
 sudo echo 'neofetch' >> .bashrc
 sudo snap install microk8s --classic --channel=latest/edge/ha-preview 

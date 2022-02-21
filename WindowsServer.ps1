@@ -1,6 +1,14 @@
-oSet-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+#Requires -RunAsAdministrator
+## Installs and updates recommended applications in powershell for Windows 10 and 11 ##
+
+## Installs Chocolatey ##
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+
+## Disable confirmation for installing apps ##
 choco feature enable -n allowGlobalConfirmation
-choco install Containers --source windowsfeatures
+
+## Install Container System and enable OpenSSH ##
+choco install Containers Microsoft-Hyper-V --source windowsfeatures
 choco install nano wget powershell-core winfetch adguardhome nssm anydesk.install microsoft-windows-terminal
 Install-Module -Name DockerMsftProvider -Repository PSGallery -Force
 Install-Package -Name docker -ProviderName DockerMsftProvider
@@ -16,8 +24,4 @@ cat %username%\.ssh\id_ed25519
 cat %username%\.ssh\id_ed25519.pub
 cp %username%\.ssh\id_ed25519.pub C:\ProgramData\ssh\administrators_authorized_keys
 icacls.exe "C:\ProgramData\ssh\administrators_authorized_keys" /inheritance:r /grant "Administrators:F" /grant "SYSTEM:F"
-New-NetFirewallRule -DisplayName AdGuard -Profile @('Domain', 'Private', 'Public') -Direction Inbound -Action Allow -Protocol TCP -LocalPort @('53', '80', '443', '3000')
-New-NetFirewallRule -DisplayName AdGuard2 -Profile @('Domain', 'Private', 'Public') -Direction Inbound -Action Allow -Protocol UDP -LocalPort @('53')
-// New-NetFirewallRule -DisplayName "Docker" -Direction Inbound -Program "C:\Program Files\Docker\Docker\resources\com.docker.backend.exe" -Action Allow
-// nssm.exe install adguardhome
-// Set-Service docker -startuptype automatic
+New-NetFirewallRule -DisplayName "Docker" -Direction Inbound -Program "C:\Program Files\Docker\Docker\resources\com.docker.backend.exe" -Action Allow
