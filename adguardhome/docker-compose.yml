@@ -1,7 +1,7 @@
 version: "2"
 services:
   adguardhome:
-    image: mcr.microsoft.com/windows/servercore:20H2
+    image: mcr.microsoft.com/windows/servercore:ltsc2022
     container_name: adguardhomewindowsserver
     command: Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1')); choco feature enable -n allowGlobalConfirmation; choco install nano wget powershell-core winfetch adguardhome
     ports:
