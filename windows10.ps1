@@ -21,30 +21,10 @@ cp %username%\.ssh\id_ed25519.pub C:\ProgramData\ssh\administrators_authorized_k
 icacls.exe "C:\ProgramData\ssh\administrators_authorized_keys" /inheritance:r /grant "Administrators:F" /grant "SYSTEM:F"
 
 ## Installs Base Programs ##
-choco install microsoft-edge /
-7zip.install /
-powershell-core /
-anydesk.install /
-dotnetfx /
-adobereader /
-notepadplusplus.install /
-microsoft-teams.install /
-termius /
-nano /
-wget /
-winfetch /
+choco install microsoft-edge 7zip.install powershell-core anydesk.install dotnetfx adobereader notepadplusplus.install microsoft-teams.install termius nano wget  winfetch
 
 ## Installs Programming Tools ##
-openssl.light /
-vscode.install /
-awscli /
-azure-cli /
-terraform /
-microsoftazurestorageexplorer /
-git.install /
-docker-cli /
-docker-engine /
-visualstudio2022enterprise /
+choco install openssl.light vscode.install awscli azure-cli terraform microsoftazurestorageexplorer git.install docker-cli docker-engine visualstudio2022enterprise
 
 ## Upgrade Software ##
 choco upgrade all
