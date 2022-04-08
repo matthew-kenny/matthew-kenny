@@ -1,22 +1,41 @@
 #!/bin/bash
-## Installation of Ubuntu and Microk8s based kubernetes ##
+## Installation of Ubuntu Desktop and Microk8s based kubernetes ##
 
-##Variables##
-MACHINENAME1=server1
-IPADDRESS1=1.2.3.4
-MACHINENAME2=server2
-IPADDRESS2=1.2.3.5
-MACHINENAME3=server3
-IPADDRESS3=1.2.3.6
 ## Setup ##
 # shellcheck disable=SC2129
-sudo echo '$MACHINENAME1 $IPADDRESS1' >> /etc/hosts
-sudo echo '$MACHINENAME2 $IPADDRESS2' >> /etc/hosts
-sudo echo '$MACHINENAME3 $IPADDRESS3' >> /etc/hosts
-sudo apt update | sudo apt upgrade –y 
+sudo apt update | sudo apt upgrade –y
 sudo touch "$HOME"/.hushlogin
-sudo apt install neofetch snapd
 sudo echo 'neofetch' >> .bashrc
+wget https://downloads.vivaldi.com/stable/vivaldi-stable_[*].deb -O vivaldi.deb
+sudo dpkg -i vivaldi.deb
+git config --global user.name "First Second Name"
+git config --global user.email "email@email.com"
+sudoedit /etc/gdm3/custom.conf
+#Uncomment the line: WaylandEnable=false
+sudo systemctl restart gdm3
+wget https://downloads.realvnc.com/download/file/vnc.files/VNC-Server-[*]-Linux-x86.deb -O vnc.deb
+sudo dpkg -i vnc.deb
+wget -qO - https://keys.anydesk.com/repos/DEB-GPG-KEY | apt-key add -
+sudo echo "deb http://deb.anydesk.com/ all main" > /etc/apt/sources.list.d/anydesk-stable.list
+sudo apt update
+sudo apt install curl anydesk neofetch synaptic -y
+curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
+sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
+sudo apt-get update && sudo apt-get install terraform
+sudo systemctl start vncserver-x11-serviced.service
+sudo systemctl enable vncserver-x11-serviced.service
+sudo snap install 1paasword
+sudo snap install aws-cli --classic
+sudo snap install code --classic
+sudo snap install fast
+sudo snap install intellij-idea-ultimate --classic
+sudo snap install powershell --classic
+sudo snap install spotify
+sudo snap install termius-app
+sudo snap install vlc
+
+
+## Microk8s Installation ##
 sudo snap install microk8s --classic --channel=latest/edge/ha-preview 
 sudo snap install kompose 
 sudo usermod -a -G microk8s ubuntu 
@@ -34,20 +53,12 @@ mv kube-prometheus /var/snap/2212/
 microk8s.kubectl config set-context --current --namespace=kube-system
 sudo echo 'microk8s.kubectl config set-context --current --namespace=kube-system' >> .bashrc
 
-## Test ##
+## Microk8s Test ##
 wget https://github.com/charmed-kubernetes/metallb-operator/blob/master/docs/example-microbot-lb.yaml 
 microk8s.kubectl apply -f ./docs/example-microbot-lb.yaml 
 microk8s.kubectl delete example-microbot 
 
-##Apps## 
-microk8s.kubectl create deployment cloudflare --image=oznu/cloudflare-ddns -o yaml --dry-run=client > oznu/cloudflare.yaml
-microk8s.kubectl create deployment adblock --image adguard/adguardhome -o yaml --dry-run=client > adguard.yaml
-microk8s.kubectl create deployment wow --image azerothcore2/server -o yaml --dry-run=client > wow.yaml
-microk8s.kubectl create deployment minecraft --image itzg/minecraft-bedrock-server -o yaml --dry-run=client > minecraft.yaml
-microk8s.kubectl create deployment plex --image plexinc/pms-docker -o yaml --dry-run=client > plex.yaml
-microk8s.kubectl create deployment letsencrypt --image=adferrand/dnsrobocert -o yaml --dry-run=client > letsencrypt.yaml
-
-##Commands## 
+## Microk8s Commands##
 microk8s.status 
 microk8s.kubectl get nodes 
 microk8s.kubectl get all -A 
