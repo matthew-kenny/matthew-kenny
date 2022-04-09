@@ -6,24 +6,39 @@
 sudo apt update | sudo apt upgrade –y
 sudo touch "$HOME"/.hushlogin
 sudo echo 'neofetch' >> .bashrc
+
+## Vivaldi ##
 wget https://downloads.vivaldi.com/stable/vivaldi-stable_[*].deb -O vivaldi.deb
 sudo dpkg -i vivaldi.deb
-git config --global user.name "First Second Name"
-git config --global user.email "email@email.com"
+
+## x11 ##
 sudoedit /etc/gdm3/custom.conf
 #Uncomment the line: WaylandEnable=false
 sudo systemctl restart gdm3
+
+## VNC ##
 wget https://downloads.realvnc.com/download/file/vnc.files/VNC-Server-[*]-Linux-x86.deb -O vnc.deb
 sudo dpkg -i vnc.deb
-wget -qO - https://keys.anydesk.com/repos/DEB-GPG-KEY | apt-key add -
-sudo echo "deb http://deb.anydesk.com/ all main" > /etc/apt/sources.list.d/anydesk-stable.list
-sudo apt update
-sudo apt install curl anydesk neofetch synaptic -y
-curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
-sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
-sudo apt-get update && sudo apt-get install terraform
 sudo systemctl start vncserver-x11-serviced.service
 sudo systemctl enable vncserver-x11-serviced.service
+
+## Anydesk ##
+wget -qO - https://keys.anydesk.com/repos/DEB-GPG-KEY | apt-key add -
+sudo echo "deb http://deb.anydesk.com/ all main" > /etc/apt/sources.list.d/anydesk-stable.list
+
+## Programming Tools ##
+sudo apt update && sudo apt install curl  ca-certificates gnupg anydesk neofetch synaptic git -y
+git config --global user.name "First Second Name"
+git config --global user.email "email@email.com"
+curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
+sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt update && sudo apt install terraform docker-ce-cli -y
+curl https://desktop-stage.docker.com/linux/main/amd64/77103/docker-desktop.deb --output docker-desktop.deb
+sudo apt install ./docker-desktop.deb
+
+## Snap Installs ##
 sudo snap install 1paasword
 sudo snap install aws-cli --classic
 sudo snap install code --classic
