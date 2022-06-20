@@ -5,7 +5,7 @@
 Tinkertool
 Magnet
 Reeder
-brew install --cask cheatsheet Dropzone microsoft-edge the-unarchiver powershell microsoft-office microsoft-teams termius neofetch spotify 
+brew install --cask cheatsheet Dropzone microsoft-edge the-unarchiver powershell microsoft-office microsoft-teams termius neofetch spotify microsoft-remote-desktop slack
 
 
 Overcast.fm #Apple Silicon
