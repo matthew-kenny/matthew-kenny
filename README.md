@@ -14,10 +14,13 @@ Installation of red hat based distro tools and docker - [photonos.sh](https://gi
 Installation of Rancher based kubernetes within Ubuntu/Debian - [rancher.sh](https://github.com/matthew-kenny/matthew-kenny/blob/main/rancher.sh)
 
 ## Windows 10 and 11 Desktop
-Installs and updates recommended applications in powershell within Windows 10 and 11 - [windows10.ps1](https://github.com/matthew-kenny/matthew-kenny/blob/main/windows10.ps1)
+Installs and updates recommended applications in chocolatey within Windows 10 and 11 - [windows10.ps1](https://github.com/matthew-kenny/matthew-kenny/blob/main/windows10.ps1)
 
 ## Windows Server with Docker
 Installation Windows server and docker [WindowsServer.ps1](https://github.com/matthew-kenny/matthew-kenny/blob/main/WindowsServer.ps1)
 
 ## Windows Server Docker Compose Container - Adguard Home
 Windows Based DoH DNS server [adguardhome/docker-compose.yml](https://github.com/matthew-kenny/matthew-kenny/blob/main/adguardhome/docker-compose.yml)
+
+## Mac Desktop with Docker
+Installs and updates recommended applications in homebrew within Apple Mac OS [mac.sh](https://github.com/matthew-kenny/matthew-kenny/blob/main/mac.sh)
