@@ -22,6 +22,9 @@ sudo systemctl enable vncserver-x11-serviced.service
 wget -qO - https://keys.anydesk.com/repos/DEB-GPG-KEY | apt-key add -
 echo "deb http://deb.anydesk.com/ all main" | sudo tee -a /etc/apt/sources.list.d/anydesk-stable.list
 
+## Cloudflared ##
+sudo bash -c "$(wget -qO - https://raw.githubusercontent.com/MajesticTechie/dns-over-https-ubuntu/main/install.sh)"
+
 ## Programming Tools ##
 sudo apt update && sudo apt install curl  ca-certificates gnupg anydesk neofetch synaptic git -y
 git config --global user.name "First Second Name"
